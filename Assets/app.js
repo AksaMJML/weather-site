@@ -1,8 +1,11 @@
-const apiKey = "";
-const apiUrl = "http://api.weatherapi.com/v1/current.json?key=525f5a8a471f491f91682348253012&q=galle"
+//const apiKey = "";
+const apiUrl = "http://api.weatherapi.com/v1/current.json?key=525f5a8a471f491f91682348253012&q="
 
-async function checkWeather(){
-    const response = await fetch(apiUrl);
+const txtInput = document.querySelector(".search inputTxt");
+const btnSearch = document.querySelector(".search button");
+
+async function checkWeather(city){
+    const response = await fetch(apiUrl + city);
     const data = await response.json();
     console.log(data);
 
@@ -12,7 +15,11 @@ async function checkWeather(){
     document.querySelector(".wind").innerHTML = data.current.wind_kph + " kph";
 }
 
-checkWeather();
+btnSearch.addEventListener("click", ()=>{
+    checkWeather(txtInput.value);
+})
+
+
 
 
 
