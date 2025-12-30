@@ -6,10 +6,10 @@ async function checkWeather(){
     const data = await response.json();
     console.log(data);
 
-    document.querySelector("city").innerText = data.location.name;
-    document.querySelector("temp").innerText = Math.round(data.current.temp_c) + "°C";
-    document.querySelector("humidity").innerText = data.current.humidity + "%";
-    document.querySelector("wind").innerText = data.current.wind_kph + " kph";
+    document.querySelector(".city").innerHTML = data.location.name;
+    document.querySelector(".temp").innerHTML = Math.round(data.current.temp_c) + "°C";
+    document.querySelector(".humidity").innerHTML = data.current.humidity + "%";
+    document.querySelector(".wind").innerHTML = data.current.wind_kph + " kph";
 }
 
 checkWeather();
