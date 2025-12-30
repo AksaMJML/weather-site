@@ -3,26 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Country Website</title>
+    <title>Weather Site</title>
+    <link rel="stylesheet" href="Assets/style.css">
 </head>
 <body>
-    <h1>Countries Site</h1>
-    <input type="text" id="txtCountry" placeholder="Enter Country Here">
-    <input type="button" value="Search" id="btnSearch" onclick="searchCountry()">
-    <h2 id="countryName"></h2>
-    <h2 id="official"></h2>
-    <h2 id="NativeName"></h2>
-    <div></div>
-    <div id="flags"></div> 
-    <p id="tId1"></p>
-    <p id="tId2"></p>
-    <p id="idd"></p>
-    <p id="capital"></p>
-    <p id="whether"></p>
-    <!-- <p id=""></p>
-    <div id="idd1"></div>
-    <div id="capital"></div>
-    <div id="lating"></div> -->
+    <div class="card">
+        <div class="search">
+            <input type="text" placeholder="Enter City Name" spellcheck="false">
+            <button><img src="Assets/img/search.png"></button>
+        </div>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
