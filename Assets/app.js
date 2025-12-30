@@ -3,6 +3,8 @@ const apiUrl = "http://api.weatherapi.com/v1/current.json?key=525f5a8a471f491f91
 
 const txtInput = document.querySelector(".search input");
 const btnSearch = document.querySelector(".search button");
+const weatherIcon = document.querySelector(".weather-icon");
+//weatherIcon.src = "https:" + data.current.condition.icon;
 
 async function checkWeather(city){
     const response = await fetch(apiUrl + city);
@@ -13,6 +15,19 @@ async function checkWeather(city){
     document.querySelector(".temp").innerHTML = Math.round(data.current.temp_c) + "°C";
     document.querySelector(".humidity").innerHTML = data.current.humidity + "%";
     document.querySelector(".wind").innerHTML = data.current.wind_kph + " kph";
+
+
+    if(data.current.condition.text == "Sunny" || data.current.condition.text == "Clear"){
+        weatherIcon.src = "Assets/img/clear.png";
+    }else if(data.current.condition.text == "Cloud"){
+        weatherIcon.src = "Assets/img/cloud.png";
+    }else if(data.current.condition.text == "Rain"){
+        weatherIcon.src = "Assets/img/rain.png";
+    }else if(data.current.condition.text == "Drizzle"){
+        weatherIcon.src = "Assets/img/Drizzle.png";
+    }else if(data.current.condition.text == "mist" || data.current.condition.text == "Fog" || data.current.condition.text == "Fog" ){
+        weatherIcon.src = "Assets/img/Mist.png";
+    }     
 }
 
 btnSearch.addEventListener("click", ()=>{
