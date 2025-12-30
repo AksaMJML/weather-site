@@ -1,10 +1,15 @@
 const apiKey = "";
-const apiUrl = "http://api.weatherapi.com/v1/current.json?key=525f5a8a471f491f91682348253012&q=kandy"
+const apiUrl = "http://api.weatherapi.com/v1/current.json?key=525f5a8a471f491f91682348253012&q=galle"
 
 async function checkWeather(){
     const response = await fetch(apiUrl);
     const data = await response.json();
     console.log(data);
+
+    document.querySelector("city").innerText = data.location.name;
+    document.querySelector("temp").innerText = Math.round(data.current.temp_c) + "°C";
+    document.querySelector("humidity").innerText = data.current.humidity + "%";
+    document.querySelector("wind").innerText = data.current.wind_kph + " kph";
 }
 
 checkWeather();
