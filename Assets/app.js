@@ -1,7 +1,7 @@
 //const apiKey = "";
 const apiUrl = "http://api.weatherapi.com/v1/current.json?key=525f5a8a471f491f91682348253012&q="
 
-const txtInput = document.querySelector(".search inputTxt");
+const txtInput = document.querySelector(".search input");
 const btnSearch = document.querySelector(".search button");
 
 async function checkWeather(city){
