@@ -8,3 +8,13 @@ body {
     background-color: #012c3b;
 
 }
+.card{
+    width: 90%;
+    max-width: 400px;                   
+    background-color: #026773;
+    color: #fff;
+    margin: 100px auto 0;
+    border-radius: 20px;
+    padding: 40px 35px;
+    text-align: center;
+}   
